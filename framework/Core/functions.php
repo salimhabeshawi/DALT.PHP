@@ -73,6 +73,34 @@ function old($key, $default = '')
 
 function vite(string $entryPath): string
 {
+    $manifestPathPrimary = base_path('public/build/.vite/manifest.json');
+    $manifestPathFallback = base_path('public/build/manifest.json');
+    $manifestPath = file_exists($manifestPathPrimary) ? $manifestPathPrimary : (file_exists($manifestPathFallback) ? $manifestPathFallback : null);
+
+    // If pre-compiled manifest exists, ALWAYS use it.
+    // This avoids port conflicts and 200ms timeouts when the dev server is offline.
+    if ($manifestPath) {
+        $manifest = json_decode(file_get_contents($manifestPath), true);
+        if (!isset($manifest[$entryPath])) {
+            return "<!-- Vite entry '$entryPath' not present in manifest. -->";
+        }
+
+        $tags = [];
+
+        if (!empty($manifest[$entryPath]['css'])) {
+            foreach ($manifest[$entryPath]['css'] as $cssFile) {
+                $tags[] = '<link rel="stylesheet" href="/build/' . $cssFile . '">';
+            }
+        }
+
+        if (!empty($manifest[$entryPath]['file'])) {
+            $tags[] = '<script type="module" src="/build/' . $manifest[$entryPath]['file'] . '"></script>';
+        }
+
+        return implode("\n", $tags);
+    }
+
+    // Fallback to dev server only if there is no compiled build
     $devServerUrl = $_ENV['VITE_DEV_SERVER_URL'] ?? 'http://localhost:5173';
 
     if (vite_is_dev_server_running($devServerUrl)) {
@@ -81,59 +109,35 @@ function vite(string $entryPath): string
         return $client . "\n" . $entry;
     }
 
-    $manifestPathPrimary = base_path('public/build/.vite/manifest.json');
-    $manifestPathFallback = base_path('public/build/manifest.json');
-    $manifestPath = file_exists($manifestPathPrimary) ? $manifestPathPrimary : $manifestPathFallback;
-
-    if (!file_exists($manifestPath)) {
-        $fallback = [];
-        $cssCandidates = [
-            'public/app.css',
-            'public/js/app.css',
-            'public/css/style.css',
-        ];
-        $jsCandidates = [
-            'public/app.js',
-            'public/js/app.js',
-        ];
-        foreach ($cssCandidates as $cssPath) {
-            if (file_exists(base_path($cssPath))) {
-                $href = '/' . ltrim(str_replace('public/', '', $cssPath), '/');
-                $fallback[] = '<link rel="stylesheet" href="' . htmlspecialchars($href) . '">';
-                break;
-            }
-        }
-        foreach ($jsCandidates as $jsPath) {
-            if (file_exists(base_path($jsPath))) {
-                $src = '/' . ltrim(str_replace('public/', '', $jsPath), '/');
-                $fallback[] = '<script defer src="' . htmlspecialchars($src) . '"></script>';
-                break;
-            }
-        }
-        if ($fallback) {
-            return implode("\n", $fallback);
-        }
-        return "<!-- Vite manifest not found. Run 'npm run build'. -->";
-    }
-
-    $manifest = json_decode(file_get_contents($manifestPath), true);
-    if (!isset($manifest[$entryPath])) {
-        return "<!-- Vite entry '$entryPath' not present in manifest. -->";
-    }
-
-    $tags = [];
-
-    if (!empty($manifest[$entryPath]['css'])) {
-        foreach ($manifest[$entryPath]['css'] as $cssFile) {
-            $tags[] = '<link rel="stylesheet" href="/build/' . $cssFile . '">';
+    // Ultimate fallback for missing assets
+    $fallback = [];
+    $cssCandidates = [
+        'public/app.css',
+        'public/js/app.css',
+        'public/css/style.css',
+    ];
+    $jsCandidates = [
+        'public/app.js',
+        'public/js/app.js',
+    ];
+    foreach ($cssCandidates as $cssPath) {
+        if (file_exists(base_path($cssPath))) {
+            $href = '/' . ltrim(str_replace('public/', '', $cssPath), '/');
+            $fallback[] = '<link rel="stylesheet" href="' . htmlspecialchars($href) . '">';
+            break;
         }
     }
-
-    if (!empty($manifest[$entryPath]['file'])) {
-        $tags[] = '<script type="module" src="/build/' . $manifest[$entryPath]['file'] . '"></script>';
+    foreach ($jsCandidates as $jsPath) {
+        if (file_exists(base_path($jsPath))) {
+            $src = '/' . ltrim(str_replace('public/', '', $jsPath), '/');
+            $fallback[] = '<script defer src="' . htmlspecialchars($src) . '"></script>';
+            break;
+        }
     }
-
-    return implode("\n", $tags);
+    if ($fallback) {
+        return implode("\n", $fallback);
+    }
+    return "<!-- Vite manifest not found and dev server is offline. -->";
 }
 
 function vite_is_dev_server_running(string $url): bool

@@ -18,13 +18,10 @@ package-lock.json
 .DS_Store
 Thumbs.db
 
-# Build outputs (keep .gitkeep files)
 /public/css/*
 !/public/css/.gitkeep
 /public/js/*
 !/public/js/.gitkeep
-/public/build/*
-!/public/build/.gitkeep
 
 # Logs
 /storage/logs/*
