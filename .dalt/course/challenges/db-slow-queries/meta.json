@@ -1,0 +1,7 @@
+{
+  "title": "Slow Queries",
+  "description": "Identify columns missing indexes based on controller queries and add them to the migration.",
+  "difficulty": "Medium",
+  "bugs": 2,
+  "lesson": "17-observability"
+}

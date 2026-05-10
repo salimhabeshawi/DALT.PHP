@@ -1,0 +1,6 @@
+{
+  "title": "Docker Compose",
+  "description": "Orchestrate PHP, PostgreSQL, and Nginx as one stack with a single command",
+  "icon": "lifecycle",
+  "color": "purple"
+}

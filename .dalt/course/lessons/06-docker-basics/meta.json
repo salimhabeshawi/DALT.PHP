@@ -1,0 +1,6 @@
+{
+  "title": "Docker Basics",
+  "description": "Understand containers, images, and core Docker CLI commands",
+  "icon": "lifecycle",
+  "color": "blue"
+}

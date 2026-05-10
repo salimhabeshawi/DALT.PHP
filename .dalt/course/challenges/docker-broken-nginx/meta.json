@@ -1,0 +1,8 @@
+{
+  "title": "Broken Nginx Config",
+  "difficulty": "Easy",
+  "bugs": 2,
+  "lesson": "07-dockerfile",
+  "description": "Nginx isn't forwarding PHP requests to PHP-FPM — fix the config",
+  "color": "orange"
+}

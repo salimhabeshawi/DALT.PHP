@@ -1,0 +1,7 @@
+{
+  "title": "Broken Transaction",
+  "description": "The transfer endpoint has no ROLLBACK — a failed write corrupts the balance permanently.",
+  "difficulty": "Medium",
+  "bugs": 2,
+  "lesson": "10-postgres-intermediate"
+}

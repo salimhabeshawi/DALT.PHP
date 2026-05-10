@@ -1,0 +1,7 @@
+{
+  "title": "Broken JOIN",
+  "description": "The posts endpoint uses the wrong JOIN type and wrong ON clause — fix both.",
+  "difficulty": "Medium",
+  "bugs": 2,
+  "lesson": "10-postgres-intermediate"
+}

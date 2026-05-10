@@ -1,0 +1,8 @@
+{
+  "title": "Incomplete Dockerfile",
+  "difficulty": "Easy",
+  "bugs": 3,
+  "lesson": "07-dockerfile",
+  "description": "Complete the Dockerfile for DALT.PHP — three parts are missing",
+  "color": "orange"
+}

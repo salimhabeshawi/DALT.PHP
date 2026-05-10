@@ -86,7 +86,8 @@
                   'green' => 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
                   'yellow' => 'bg-amber-500/10 text-amber-400 border-amber-500/20',
                 ];
-                $mappedClass = $colorMap[$challenge['color']] ?? 'bg-gray-800 text-gray-300 border-gray-700';
+                $color = $challenge['color'] ?? 'gray';
+                $mappedClass = $colorMap[$color] ?? 'bg-gray-800 text-gray-300 border-gray-700';
               ?>
               <span class="px-2.5 py-1 border text-[10px] uppercase tracking-wider font-semibold rounded <?= $mappedClass ?>">
                 <?= $challenge['difficulty'] ?>
