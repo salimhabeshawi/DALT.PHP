@@ -65,13 +65,13 @@ After learning with PHP, these concepts transfer to any backend language. You'll
 
 ## 📖 Documentation
 
-Full documentation at: **[daltphp.com/docs](https://daltphp.com/docs)**
+Full documentation at: **[daltphp.com/docs](https://dalt.ibnuafdel.com/docs)**
 
-- [What is DALT?](https://daltphp.com/docs/introduction/what-is-dalt) - Understanding the learning framework
-- [Why DALT?](https://daltphp.com/docs/introduction/why-dalt) - When DALT is right for you
-- [Why PHP?](https://daltphp.com/docs/introduction/why-php) - Why PHP is ideal for learning
-- [Quick Start](https://daltphp.com/docs/introduction/quick-start) - Get started in 5 minutes
-- [Building a Blog](https://daltphp.com/docs/guides/building-a-blog) - Your first project
+- [What is DALT?](https://dalt.ibnuafdel.com/docs/introduction/what-is-dalt) - Understanding the learning framework
+- [Why DALT?](https://dalt.ibnuafdel.com/)docs/introduction/why-dalt) - When DALT is right for you
+- [Why PHP?](https://dalt.ibnuafdel.com/docs/introduction/why-php) - Why PHP is ideal for learning
+- [Quick Start](https://dalt.ibnuafdel.com/docs/introduction/quick-start) - Get started in 5 minutes
+- [Building a Blog](https://dalt.ibnuafdel.com/docs/guides/building-a-blog) - Your first project
 
 ---
 
