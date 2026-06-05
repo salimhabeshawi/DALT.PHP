@@ -1,0 +1,7 @@
+{
+  "title": "Missing JSONB Metadata",
+  "description": "The posts controller ignores the metadata field — add it to the INSERT and SELECT.",
+  "difficulty": "Medium",
+  "bugs": 2,
+  "lesson": "13-postgres-advanced"
+}

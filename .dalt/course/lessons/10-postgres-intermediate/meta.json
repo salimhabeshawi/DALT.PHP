@@ -1,0 +1,6 @@
+{
+  "title": "PostgreSQL Core",
+  "description": "JOINs, aggregations, indexes, transactions, and constraints — everything you need for real database work.",
+  "icon": "database",
+  "color": "green"
+}

@@ -146,7 +146,7 @@ switch ($command) {
         echo "             DALT.PHP TEST RUNNER                \n";
         echo "=================================================\n\n";
 
-        require_once base_path('framework/Core/ChallengeVerifier.php');
+        require_once base_path('.dalt/Core/ChallengeVerifier.php');
 
         $totalTests = 0;
         $totalPassed = 0;
@@ -429,7 +429,7 @@ SQL;
     case 'challenge:verify':
         require_platform($command);
         require_once base_path('.dalt/Core/ChallengeManager.php');
-        require_once base_path('framework/Core/ChallengeVerifier.php');
+        require_once base_path('.dalt/Core/ChallengeVerifier.php');
         $active = Core\ChallengeManager::getActiveChallenge();
         if ($active === null) {
             echo "\nNo active challenge. Run: php artisan challenge:start <name>\n";

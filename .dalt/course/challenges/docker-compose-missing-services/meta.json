@@ -1,0 +1,8 @@
+{
+  "title": "Missing Compose Services",
+  "difficulty": "Easy",
+  "bugs": 2,
+  "lesson": "08-docker-compose",
+  "description": "The compose file only has the app service — add db and nginx",
+  "color": "purple"
+}

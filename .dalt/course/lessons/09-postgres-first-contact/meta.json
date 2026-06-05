@@ -1,0 +1,6 @@
+{
+  "title": "PostgreSQL First Contact",
+  "description": "Connect to a real Postgres instance, write raw SQL, and understand DALT's database layer",
+  "icon": "database",
+  "color": "green"
+}

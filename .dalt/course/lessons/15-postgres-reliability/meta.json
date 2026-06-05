@@ -1,0 +1,6 @@
+{
+  "title": "PostgreSQL Reliability",
+  "description": "Backups, restore processes, migrations as code, and handling failed migrations.",
+  "icon": "shield",
+  "color": "green"
+}

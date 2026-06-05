@@ -1,0 +1,2 @@
+-- TODO: Add an index on posts(user_id)
+-- TODO: Add an index on posts(status)

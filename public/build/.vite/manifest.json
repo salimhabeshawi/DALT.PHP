@@ -1,0 +1,11 @@
+{
+  ".dalt/resources/js/app.js": {
+    "file": "assets/app-DFbVjgB8.js",
+    "name": "app",
+    "src": ".dalt/resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-CwxRgNbV.css"
+    ]
+  }
+}

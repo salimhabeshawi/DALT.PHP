@@ -1,0 +1,6 @@
+{
+  "title": "DALT Database Layer",
+  "description": "How DALT's query methods map to PDO, writing paginated endpoints, and handling transactions from PHP.",
+  "icon": "database",
+  "color": "blue"
+}

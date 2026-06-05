@@ -1,0 +1,2 @@
+-- BUG: RLS is not enabled on the posts table
+-- BUG: No policy exists to isolate tenants

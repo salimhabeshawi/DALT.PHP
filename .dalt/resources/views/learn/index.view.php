@@ -82,15 +82,17 @@
             <div class="flex items-start justify-between mb-3">
               <div class="text-3xl"><?= $challenge['icon'] ?></div>
               <?php
-              // Map logical colors to dark-mode-friendly tailwind classes to avoid purge issues
-              $colorMap = [
-                'red' => 'bg-red-500/10 text-red-400 border-red-500/20',
-                'blue' => 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-                'purple' => 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-                'green' => 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-                'yellow' => 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-              ];
-              $mappedClass = $colorMap[$challenge['color']] ?? 'bg-gray-800 text-gray-300 border-gray-700';
+
+                // Map logical colors to dark-mode-friendly tailwind classes to avoid purge issues
+                $colorMap = [
+                  'red' => 'bg-red-500/10 text-red-400 border-red-500/20',
+                  'blue' => 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+                  'purple' => 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+                  'green' => 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+                  'yellow' => 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+                ];
+                $color = $challenge['color'] ?? 'gray';
+                $mappedClass = $colorMap[$color] ?? 'bg-gray-800 text-gray-300 border-gray-700';
               ?>
               <span class="px-2.5 py-1 border text-[10px] uppercase tracking-wider font-semibold rounded <?= $mappedClass ?>">
                 <?= $challenge['difficulty'] ?>

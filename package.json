@@ -8,19 +8,25 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": ["php", "framework", "learning", "backend", "debugging"],
+  "keywords": [
+    "php",
+    "framework",
+    "learning",
+    "backend",
+    "debugging"
+  ],
   "author": "ibnuafdel",
   "license": "MIT",
   "devDependencies": {
-    "@tailwindcss/vite": "^4.0.0-beta.7",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "tailwindcss": "^4.0.0-beta.7",
-    "vite": "^5.4.8",
+    "@tailwindcss/vite": "^4.3.0",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "tailwindcss": "^4.3.0",
+    "vite": "^8.0.12",
     "vite-plugin-full-reload": "^1.2.0"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "marked": "^12.0.0",
-    "vue": "^3.5.13"
+    "vue": "^3.5.34"
   }
 }
